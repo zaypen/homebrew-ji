@@ -9,7 +9,6 @@ class Ji < Formula
     end
   end
   license "MIT"
-  depends_on "opus"
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin": {}
