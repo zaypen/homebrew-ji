@@ -1,13 +1,12 @@
 class Ji < Formula
   desc "Voice dictation as a Unix pipe: 16 kHz mono PCM in, words out"
   homepage "https://github.com/zaypen/ji"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/zaypen/ji/releases/download/v0.1.0/ji-aarch64-apple-darwin.tar.xz"
-    sha256 "31bcec86cef94df222edf4cfa51b023f2b427ab56addf234d1d0cc8cd8670b84"
+    url "https://github.com/zaypen/ji/releases/download/v0.1.1/ji-aarch64-apple-darwin.tar.xz"
+    sha256 "e5df7a483ff40578288b20465a47593d985a354e39ccf5173bcba0430b1ddfc8"
   end
   license "MIT"
-  depends_on "opus"
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin": {},
@@ -30,7 +29,7 @@ class Ji < Formula
 
   def install
     if OS.mac? && Hardware::CPU.arm?
-      bin.install "ji"
+      bin.install "ji", "ji-dictate"
     end
 
     install_binary_aliases!
